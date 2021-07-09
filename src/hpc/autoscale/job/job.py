@@ -72,6 +72,16 @@ class Job:
         self.__iterations_remaining = iterations
 
         _check_type(node_count=node_count, type=int)
+        if node_count >= 40 :
+            self.__node_count = node_count + 4
+            self.__nodes_remaining = node_count + 4
+        elif node_count >= 20 :
+            self.__node_count = node_count + 2
+            self.__nodes_remaining = node_count + 2
+        else :
+            self.__node_count = node_count
+            self.__nodes_remaining = node_count
+
         self.__node_count = node_count
         self.__nodes_remaining = node_count
 
